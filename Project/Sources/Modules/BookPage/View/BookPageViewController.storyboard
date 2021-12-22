@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
+        <array key="SF-Pro-Text-Regular.otf">
+            <string>SFProText-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Title-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="BookPageViewController" customModule="BooksKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Book name" minimumFontSize="16" translatesAutoresizingMaskIntoConstraints="NO" id="fPD-Rh-TxZ">
+                                <rect key="frame" x="20" y="26" width="280" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="QhP-BL-6Ua"/>
+                                </constraints>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="SFProText-Regular" family="SF Pro Text" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no"/>
+                            </textField>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="Jrk-Dc-7hC">
+                                <rect key="frame" x="20" y="95" width="280" height="215"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="215" id="aQ7-g2-mRJ"/>
+                                </constraints>
+                            </datePicker>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7E9-sI-Om4">
+                                <rect key="frame" x="35" y="493" width="250" height="50"/>
+                                <color key="backgroundColor" red="0.027450980390000001" green="0.4823529412" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="jyc-wG-ETH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onBookPageActionButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="NNR-dF-iai"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Jrk-Dc-7hC" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="5cX-mw-uWh"/>
+                            <constraint firstItem="fPD-Rh-TxZ" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="20" id="LIE-Qy-cMn"/>
+                            <constraint firstItem="7E9-sI-Om4" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="35" id="Xlh-Oh-Byq"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="7E9-sI-Om4" secondAttribute="bottom" constant="25" id="bYZ-V0-0AO"/>
+                            <constraint firstItem="fPD-Rh-TxZ" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="26" id="lsf-5N-a0m"/>
+                            <constraint firstItem="Jrk-Dc-7hC" firstAttribute="top" secondItem="fPD-Rh-TxZ" secondAttribute="bottom" constant="25" id="xGP-mU-POP"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="fPD-Rh-TxZ" secondAttribute="trailing" constant="20" id="ys9-tk-66y"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="7E9-sI-Om4" secondAttribute="trailing" constant="35" id="zOB-z4-BuT"/>
+                            <constraint firstItem="Jrk-Dc-7hC" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" constant="-20" id="zVX-N5-AAm"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="jzP-lU-X7m"/>
+                    <connections>
+                        <outlet property="bookDatePicker" destination="Jrk-Dc-7hC" id="Slu-jO-Qqz"/>
+                        <outlet property="bookDatpickerHeightConstraint" destination="aQ7-g2-mRJ" id="gTA-9O-SjY"/>
+                        <outlet property="bookPageActionButton" destination="7E9-sI-Om4" id="rlR-1A-Hpa"/>
+                        <outlet property="bookPageActionButtonBottomConstraint" destination="bYZ-V0-0AO" id="hj7-KI-qBA"/>
+                        <outlet property="nameBookTextField" destination="fPD-Rh-TxZ" id="qbs-V2-F7M"/>
+                        <outlet property="nameTextField" destination="fPD-Rh-TxZ" id="sI4-iv-AzA"/>
+                        <outlet property="navItem" destination="jzP-lU-X7m" id="dXi-Zn-GnP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="gEf-cV-0sa" customClass="BookPageConfiguratorImpl" customModule="BooksKeeper" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="Y6W-OH-hqX" id="zyV-JK-zkb"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="131.8840579710145" y="83.705357142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

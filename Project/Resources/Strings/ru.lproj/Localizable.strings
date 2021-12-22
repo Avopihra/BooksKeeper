@@ -1,0 +1,25 @@
+/* 
+  Localizable.strings
+  BooksKeeper
+
+  Created by Viktoriya on 21.12.2021.
+  
+*/
+
+//MARK: - Sorting
+"Sort by name" = "Сортировка по имени";
+"Sort by date" = "Сортировка по дате";
+"Cancel" = "Отмена";
+
+//MARK: - BookPageViewController title
+"Edit info" = "Отредактировать";
+"Add new book" = "Добавить книгу";
+"Edit" = "Редактировать";
+"Add" = "Добавить";
+
+//MARK: - Storyboard
+"Start" = "Начать";
+"Books list" = "Список книг";
+"Delete" = "Удалить";
+"Empty list" = "Пустой список";
+"Book name" = "Название книги";

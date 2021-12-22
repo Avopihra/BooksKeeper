@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Y6W-OH-hqX">
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SF-Pro-Text-Bold.otf">
+            <string>SFProText-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Start Page View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController id="Y6W-OH-hqX" customClass="StartPageViewController" customModule="BooksKeeper" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bookIcon" translatesAutoresizingMaskIntoConstraints="NO" id="Hfu-bZ-Ayy">
+                                <rect key="frame" x="71" y="382" width="272" height="225"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="272" id="MGQ-z3-O9l"/>
+                                    <constraint firstAttribute="height" constant="225" id="hTt-mj-MP1"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CgU-tM-iL3" propertyAccessControl="none">
+                                <rect key="frame" x="35" y="787" width="344" height="50"/>
+                                <color key="backgroundColor" name="buttonBlue"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="NqX-Pl-33o"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SFProText-Bold" family="SF Pro Text" pointSize="16"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="onStartButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="bPa-Et-e4o"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="titleIcon" translatesAutoresizingMaskIntoConstraints="NO" id="kYd-IP-MfL">
+                                <rect key="frame" x="71" y="290" width="272" height="68"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="272" id="gTK-wu-G66"/>
+                                    <constraint firstAttribute="height" constant="68" id="xZ2-VH-Hlg"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="kYd-IP-MfL" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="0tA-zC-G9T"/>
+                            <constraint firstItem="CgU-tM-iL3" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="B85-lL-eRq"/>
+                            <constraint firstItem="Hfu-bZ-Ayy" firstAttribute="centerY" secondItem="5EZ-qb-Rvc" secondAttribute="centerY" constant="46.5" id="D2g-q4-5bw"/>
+                            <constraint firstItem="Hfu-bZ-Ayy" firstAttribute="top" secondItem="kYd-IP-MfL" secondAttribute="bottom" constant="24" id="EMP-I1-vjN"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CgU-tM-iL3" secondAttribute="trailing" constant="35" id="ZMI-C1-hY4"/>
+                            <constraint firstItem="Hfu-bZ-Ayy" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="nKP-iV-E8d"/>
+                            <constraint firstItem="CgU-tM-iL3" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="35" id="raP-9h-4I2"/>
+                            <constraint firstAttribute="bottom" secondItem="CgU-tM-iL3" secondAttribute="bottom" constant="59" id="ruQ-XQ-abP"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="oXw-sO-7rI"/>
+                    <connections>
+                        <outlet property="bookImageView" destination="Hfu-bZ-Ayy" id="M0W-FX-QQB"/>
+                        <outlet property="startButton" destination="CgU-tM-iL3" id="U08-Yc-iQc"/>
+                        <outlet property="titleImage" destination="kYd-IP-MfL" id="7e1-Xb-DYN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <customObject id="0As-Ti-Mfx" customClass="StartPageConfiguratorImpl" customModule="BooksKeeper" customModuleProvider="target">
+                    <connections>
+                        <outlet property="viewController" destination="Y6W-OH-hqX" id="ioL-m9-HUZ"/>
+                    </connections>
+                </customObject>
+            </objects>
+            <point key="canvasLocation" x="-591.304347826087" y="20.758928571428569"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="bookIcon" width="962" height="796"/>
+        <image name="titleIcon" width="1174" height="228"/>
+        <namedColor name="buttonBlue">
+            <color red="0.027000000700354576" green="0.48199999332427979" blue="0.97600001096725464" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
