@@ -20,7 +20,7 @@ protocol BooksListPresenter: BasePresenter {
 // MARK: - BooksListPresenterImpl
 class BooksListPresenterImpl: BasePresenterImpl {
 
-    private weak var view: BooksListView?
+    private weak var view: BooksListViewControllerProtocol?
     private var router: BooksListRouter?
     private var interactors: BooksListInteractors
 
@@ -28,7 +28,7 @@ class BooksListPresenterImpl: BasePresenterImpl {
     private var data = BooksListData()
     
 // MARK: - Init
-    required init(view: BooksListView,
+    required init(view: BooksListViewControllerProtocol,
                   router: BooksListRouter,
                   interactors: BooksListInteractors) {
         self.view = view

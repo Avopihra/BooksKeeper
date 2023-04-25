@@ -19,7 +19,7 @@ private enum BooksListSection: Int {
 }
 
 // MARK: - BooksListView
-protocol BooksListView: BaseView {
+protocol BooksListViewControllerProtocol: BaseViewControllerProtocol {
     
 // MARK: - Show
     func show(data: BooksListData)
@@ -90,7 +90,7 @@ extension BooksListViewController {
     }
 }
 
-extension BooksListViewController: BooksListView {
+extension BooksListViewController: BooksListViewControllerProtocol {
 
     func show(data: BooksListData) {
         self.modelSections.removeAll()

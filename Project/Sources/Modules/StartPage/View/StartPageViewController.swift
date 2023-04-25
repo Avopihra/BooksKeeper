@@ -8,7 +8,7 @@
 import UIKit
 
 // MARK: - StartPageView
-protocol StartPageView: BaseView {
+protocol StartPageViewControllerProtocol: BaseViewControllerProtocol {
     
 // MARK: - Show
     func show(data: StartPageData)
@@ -21,7 +21,7 @@ class StartPageViewController: BaseViewController {
     private(set) var configurator: StartPageConfigurator?
     
 // MARK: - Outlets
-    @IBOutlet weak var titleImage: UIImageView!
+    @IBOutlet private weak var titleImage: UIImageView!
     @IBOutlet private weak var bookImageView: UIImageView!
     @IBOutlet private weak var startButton: UIButton!
     
@@ -67,7 +67,7 @@ extension StartPageViewController {
     }
 }
 
-extension StartPageViewController: StartPageView {
+extension StartPageViewController: StartPageViewControllerProtocol {
     
     func show(data: StartPageData) {
         self.show(data: data, animated: true)

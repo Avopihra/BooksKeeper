@@ -16,14 +16,14 @@ protocol StartPagePresenter: BasePresenter {
 // MARK: - StartPagePresenterImpl
 class StartPagePresenterImpl: BasePresenterImpl {
 
-    private weak var view: StartPageView?
+    private weak var view: StartPageViewControllerProtocol?
     private var router: StartPageRouter?
 
 // MARK: - Data
     private var data = StartPageData()
     
 // MARK: - Init
-    required init(view: StartPageView,
+    required init(view: StartPageViewControllerProtocol,
                   router: StartPageRouter) {
         self.view = view
         self.router = router

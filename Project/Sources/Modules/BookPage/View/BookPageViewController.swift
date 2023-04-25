@@ -8,7 +8,7 @@
 import UIKit
 
 // MARK: - BookPageView
-protocol BookPageView: BaseView {
+protocol BookPageViewControllerProtocol: BaseViewControllerProtocol {
     
 // MARK: - Show
     func show(data: BookPageData)
@@ -144,7 +144,7 @@ extension BookPageViewController {
     }
 }
 
-extension BookPageViewController: BookPageView {
+extension BookPageViewController: BookPageViewControllerProtocol {
     
     func show(data: BookPageData) {
         self.configureBookDatePicker(data.book?.experationDate)

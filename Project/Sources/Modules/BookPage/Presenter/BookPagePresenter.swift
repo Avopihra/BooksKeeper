@@ -21,7 +21,7 @@ protocol BookPagePresenter: BasePresenter {
 // MARK: - BookPagePresenterImpl
 class BookPagePresenterImpl: BasePresenterImpl {
 
-    private weak var view: BookPageView?
+    private weak var view: BookPageViewControllerProtocol?
     private var router: BookPageRouter?
     private var valueCompletion: ((Book) -> Void)?
 
@@ -29,7 +29,7 @@ class BookPagePresenterImpl: BasePresenterImpl {
     private var data = BookPageData()
     
 // MARK: - Init
-    required init(view: BookPageView,
+    required init(view: BookPageViewControllerProtocol,
                   router: BookPageRouter) {
         self.view = view
         self.router = router
