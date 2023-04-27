@@ -12,16 +12,10 @@ protocol StartPageViewProtocol: BaseViewProtocol {
     func showLoader()
     func hideLoader()
     func showElements(inFirstLaunch: Bool)
-    
-//    func setLoadingVisible(_ visible: Bool)
-//    func show(data: StartPageData)
-//    func show(data: StartPageData,
-//              animated: Bool)
 }
 
 // MARK: - StartPagePresenter
 protocol StartPagePresenterProtocol: BasePresenterProtocol {
-
     func onStartButtonClicked()
 }
 

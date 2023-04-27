@@ -7,15 +7,6 @@
 
 import Foundation
 
-// MARK: - BooksListPresenter
-protocol BooksListPresenterProtocol: BasePresenterProtocol {
-
-// MARK: - Actions
-    func onAddButtonClicked()
-    func onSortingButtonClicked()
-    func onBookClicked(_ bookId: String?)
-    func deleteBook(_ bookId: String?)
-}
 
 // MARK: - BooksListPresenterImpl
 class BooksListPresenterImpl: BasePresenterImpl {

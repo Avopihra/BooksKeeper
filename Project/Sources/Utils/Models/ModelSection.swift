@@ -11,10 +11,7 @@ class ModelSection {
 
     public var id: String = ""
     public var rows: [ModelRow] = []
-    
-    init() {
-    }
-    
+        
     init(id: String = UUID().uuidString) {
         self.id = id
     }

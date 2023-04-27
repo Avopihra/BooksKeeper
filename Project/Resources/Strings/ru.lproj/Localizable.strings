@@ -6,20 +6,17 @@
   
 */
 
-//MARK: - Sorting
-"Sort by name" = "Сортировка по имени";
-"Sort by date" = "Сортировка по дате";
-"Cancel" = "Отмена";
+"SortByName" = "Сортировка по имени";
+"SortByDate" = "Сортировка по дате";
+"Cancel"     = "Отмена";
 
-//MARK: - BookPageViewController title
-"Edit info" = "Отредактировать";
-"Add new book" = "Добавить книгу";
-"Edit" = "Редактировать";
-"Add" = "Добавить";
+"EditInfo"   = "Отредактировать";
+"AddBook"    = "Добавить книгу";
+"Edit"       = "Редактировать";
+"Add"        = "Добавить";
 
-//MARK: - Storyboard
-"Start" = "Начать";
-"Books list" = "Список книг";
-"Delete" = "Удалить";
-"Empty list" = "Пустой список";
-"Book name" = "Название книги";
+"Start"      = "Начать";
+"BooksList"  = "Список книг";
+"Delete"     = "Удалить";
+"EmptyList"  = "Пустой список";
+"BookTitle"  = "Название книги";

@@ -77,7 +77,7 @@
                     <navigationItem key="navigationItem" title="Title" id="jzP-lU-X7m"/>
                     <connections>
                         <outlet property="bookDatePicker" destination="Jrk-Dc-7hC" id="Slu-jO-Qqz"/>
-                        <outlet property="bookDatpickerHeightConstraint" destination="aQ7-g2-mRJ" id="gTA-9O-SjY"/>
+                        <outlet property="bookDatePickerHeightConstraint" destination="aQ7-g2-mRJ" id="gTA-9O-SjY"/>
                         <outlet property="bookPageActionButton" destination="7E9-sI-Om4" id="rlR-1A-Hpa"/>
                         <outlet property="bookPageActionButtonBottomConstraint" destination="bYZ-V0-0AO" id="hj7-KI-qBA"/>
                         <outlet property="nameBookTextField" destination="fPD-Rh-TxZ" id="qbs-V2-F7M"/>

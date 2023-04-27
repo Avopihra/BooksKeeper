@@ -18,13 +18,6 @@ private enum BooksListSection: Int {
     }
 }
 
-// MARK: - BooksListView
-protocol BooksListViewProtocol: BaseViewProtocol {
-    
-// MARK: - Show
-    func show(data: BooksListData)
-}
-
 // MARK: - BooksListViewController
 class BooksListViewController: BaseTableViewController {
     
@@ -55,13 +48,13 @@ class BooksListViewController: BaseTableViewController {
     }
 
     private func configureNavBar() {
-        self.bookListItem.title = NSLocalizedString("Books list", comment: "")
+        self.bookListItem.title = translate("BooksList")
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddButtonClicked))
         self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonItem())
         
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = UIColor(named: "backgroundBlue")
+        appearance.backgroundColor = UIColor.backgroundBlue
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
         self.navigationController?.navigationBar.tintColor = UIColor.white
@@ -86,6 +79,11 @@ class BooksListViewController: BaseTableViewController {
         button.addTarget(self, action: #selector(onSortingButtonClicked), for: .touchUpInside)
         return button
     }
+    
+    private func setLeftButtonMode(visible: Bool) {
+        self.navigationItem.leftBarButtonItem?.isEnabled = visible
+        self.navigationItem.leftBarButtonItem?.customView?.alpha = visible ?  1 : 0
+    }
 }
 
 // MARK: - Setup
@@ -101,46 +99,26 @@ extension BooksListViewController {
 extension BooksListViewController: BooksListViewProtocol {
 
     func show(data: BooksListData) {
+        let notExpiratedBooks = data.books.filter{!$0.isExpired}
+        let expiratedBooks = data.books.filter{$0.isExpired}
+        
         self.modelSections.removeAll()
-        let notExpiratedBooks = data.books.filter({!$0.isExpired})
-        let expiratedBooks = data.books.filter({$0.isExpired})
-        
-        self.emptyListView.text = NSLocalizedString("Empty list", comment: "")
+        self.emptyListView.text = translate("EmptyList")
         self.emptyListView.isHidden = !data.books.isEmpty
-        if !notExpiratedBooks.isEmpty {
-
-            self.modelSections.append(self.createNotExpiratedSection(notExpiratedBooks))
-        }
-        if !expiratedBooks.isEmpty {
-            
-            self.modelSections.append(self.createExpiratedSection(expiratedBooks))
-        }
-    
-        self.setLeftButtonMode(visible: data.books.count > 1)
         
+        if !notExpiratedBooks.isEmpty {
+            self.modelSections.append(self.createSection(expirated: false, notExpiratedBooks))
+        }
+        
+        if !expiratedBooks.isEmpty {
+            self.modelSections.append(self.createSection(expirated: true, expiratedBooks))
+        }
+        self.setLeftButtonMode(visible: data.books.count > 1)
         self.tableView.reloadData()
     }
     
-    private func setLeftButtonMode(visible: Bool) {
-        self.navigationItem.leftBarButtonItem?.isEnabled = visible
-        self.navigationItem.leftBarButtonItem?.tintColor = visible ?  UIColor.systemBlue : UIColor.clear
-    }
-    
-    private func createNotExpiratedSection(_ books: [Book]) -> ModelSection {
-        let section = ModelSection(id: BooksListSection.notExpiredBooks.id)
-        var rows = [ModelRow]()
-        
-        for book in books {
-            let bookModel = BookModelRow(withBook: book)
-            rows.append(bookModel)
-        }
-        
-        section.rows = rows
-        return section
-    }
-    
-    private func createExpiratedSection(_ books: [Book]) -> ModelSection {
-        let section = ModelSection(id: BooksListSection.expiredBooks.id)
+    private func createSection(expirated: Bool, _ books: [Book]) -> ModelSection {
+        let section = ModelSection(id: expirated ? BooksListSection.expiredBooks.id : BooksListSection.notExpiredBooks.id)
         var rows = [ModelRow]()
         
         for book in books {
@@ -153,21 +131,15 @@ extension BooksListViewController: BooksListViewProtocol {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         if let model = self.modelSections[indexPath.section].rows[indexPath.row] as? BookModelRow {
             self.presenter?.onBookClicked(model.id)
         }
-    }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
     }
 
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
             if let model = self.modelSections[indexPath.section].rows[indexPath.row] as? BookModelRow {
                 self.presenter?.deleteBook(model.id)
-
             }
         }
     }

@@ -6,19 +6,18 @@
   
 */
 
-//MARK: - Sorting
-"Sort by name" = "Sort by name";
-"Sort by date" = "Sort by date";
-"Cancel" = "Cancel";
+"SortByName" = "Sort by name";
+"SortByDate" = "Sort by date";
+"Cancel"     = "Cancel";
 
-//MARK: - BookPageViewController title
-"Edit info" = "Edit info";
-"Add new book" = "Add new book";
-"Edit" = "Edit";
-"Add" = "Add";
+"EditInfo"   = "Edit info";
+"AddBook"    = "Add new book";
+"Edit"       = "Edit";
+"Add"        = "Add";
 
-//MARK: - Storyboard
-"Start" = "Start";
-"Books list" = "Books list";
-"Delete" = "Delete";
-"Empty list" = "Empty list";
+"Start"      = "Start";
+"BooksList"  = "Books list";
+"Delete"     = "Delete";
+"EmptyList"  = "Empty list";
+"BookTitle"  = "Book title";
+

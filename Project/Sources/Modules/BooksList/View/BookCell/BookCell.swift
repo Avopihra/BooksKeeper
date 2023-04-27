@@ -7,6 +7,4 @@
 
 import UIKit
 
-class BookCell: UITableViewCell {
-
-}
+class BookCell: UITableViewCell {}

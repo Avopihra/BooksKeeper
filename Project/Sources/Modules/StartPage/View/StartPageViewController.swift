@@ -36,7 +36,7 @@ class StartPageViewController: BaseViewController {
     }
     
     private func configureStartButton(inFirstLaunch: Bool) {
-        self.startButton?.setTitle(NSLocalizedString("Start", comment: ""), for: .normal)
+        self.startButton?.setTitle(translate("Start"), for: .normal)
         self.startButton?.layer.shadowColor = UIColor.black.cgColor
         self.startButton?.layer.shadowOffset = CGSize(width: 0.0, height: 4.0)
         self.startButton?.layer.shadowOpacity = 0.25

@@ -53,17 +53,17 @@ extension BooksListRouterImpl: BooksListRouter {
         let alert = UIAlertController(title: nil,
                                       message: nil,
                                       preferredStyle: .actionSheet)
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Sort by name", comment: ""),
+        alert.addAction(UIAlertAction(title: translate("SortByName"),
                                       style: .default,
                                       handler: { ( _) in
                                         completion?(.sortByName)
                                       }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Sort by date", comment: ""),
+        alert.addAction(UIAlertAction(title: translate("SortByDate"),
                                       style: .default,
                                       handler: { ( _) in
                                         completion?(.sortByDate)
                                       }))
-        alert.addAction(UIAlertAction(title: NSLocalizedString("Cancel", comment: ""),
+        alert.addAction(UIAlertAction(title: translate("Cancel"),
                                       style: .cancel,
                                       handler: nil))
         

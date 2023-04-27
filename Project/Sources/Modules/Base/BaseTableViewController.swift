@@ -64,6 +64,6 @@ extension BaseTableViewController: UITableViewDataSource {
 // MARK: - TableViewDelegate
 extension BaseTableViewController: UITableViewDelegate {
     private func tableView(tableView: UITableView, titleForDeleteConfirmationButtonForRowAtIndexPath indexPath: NSIndexPath) -> String? {
-            return NSLocalizedString("Delete", comment: "")
+            return translate("Delete")
         }
 }

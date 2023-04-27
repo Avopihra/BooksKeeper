@@ -7,17 +7,6 @@
 
 import Foundation
 
-// MARK: - BookPagePresenter
-protocol BookPagePresenterProtocol: BasePresenterProtocol {
-    
-    func setCompletionValue(isEditMode: Bool,
-                            book: Book?,
-                            completion: ((Book) -> Void)?)
-    
-    func onBookPageActionButtonClicked(pickedDate: Date,
-                               writedName: String)
-}
-
 // MARK: - BookPagePresenterImpl
 class BookPagePresenterImpl: BasePresenterImpl {
 
