@@ -15,7 +15,7 @@ protocol BooksListConfigurator: BaseConfigurator {
 // MARK: - BooksListConfiguratorImpl
 class BooksListConfiguratorImpl: BaseConfiguratorImpl {
 
-    private weak var presenter: BooksListPresenter?
+    private weak var presenter: BooksListPresenterProtocol?
 
 // MARK: - Outlets
     @IBOutlet private weak var viewController: BooksListViewController!

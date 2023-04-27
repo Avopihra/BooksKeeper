@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - BooksListPresenter
-protocol BooksListPresenter: BasePresenter {
+protocol BooksListPresenterProtocol: BasePresenterProtocol {
 
 // MARK: - Actions
     func onAddButtonClicked()
@@ -20,7 +20,7 @@ protocol BooksListPresenter: BasePresenter {
 // MARK: - BooksListPresenterImpl
 class BooksListPresenterImpl: BasePresenterImpl {
 
-    private weak var view: BooksListViewControllerProtocol?
+    private weak var view: BooksListViewProtocol?
     private var router: BooksListRouter?
     private var interactors: BooksListInteractors
 
@@ -28,7 +28,7 @@ class BooksListPresenterImpl: BasePresenterImpl {
     private var data = BooksListData()
     
 // MARK: - Init
-    required init(view: BooksListViewControllerProtocol,
+    required init(view: BooksListViewProtocol,
                   router: BooksListRouter,
                   interactors: BooksListInteractors) {
         self.view = view
@@ -45,7 +45,7 @@ class BooksListPresenterImpl: BasePresenterImpl {
 }
 
 // MARK: - BooksListPresenter
-extension BooksListPresenterImpl: BooksListPresenter {
+extension BooksListPresenterImpl: BooksListPresenterProtocol {
  
     func onSortingButtonClicked() {
         self.router?.showAlert(completion: { sortingType in

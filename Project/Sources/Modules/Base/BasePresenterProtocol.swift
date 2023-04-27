@@ -7,7 +7,7 @@
 
 import UIKit
 
-public protocol BasePresenter: AnyObject {
+public protocol BasePresenterProtocol: AnyObject {
     
 // MARK: - Life Cycle
     func viewDidLoad()
@@ -18,7 +18,7 @@ public protocol BasePresenter: AnyObject {
 }
 
 // MARK: - BasePresenterImpl
-class BasePresenterImpl: BasePresenter {
+class BasePresenterImpl: BasePresenterProtocol {
 
 // MARK: - Life Cycle
     func viewDidLoad() {}

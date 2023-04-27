@@ -7,59 +7,50 @@
 
 import Foundation
 
-// MARK: - StartPagePresenter
-protocol StartPagePresenter: BasePresenter {
-
-    func onStartButtonClicked()
-}
 
 // MARK: - StartPagePresenterImpl
 class StartPagePresenterImpl: BasePresenterImpl {
-
-    private weak var view: StartPageViewControllerProtocol?
+    
+    private weak var view: StartPageViewProtocol?
     private var router: StartPageRouter?
-
-// MARK: - Data
+    
+    // MARK: - Data
     private var data = StartPageData()
     
-// MARK: - Init
-    required init(view: StartPageViewControllerProtocol,
+    // MARK: - Init
+    required init(view: StartPageViewProtocol,
                   router: StartPageRouter) {
         self.view = view
         self.router = router
     }
-
-// MARK: - Life Cycle
+    
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.startTimer()
+        self.enterTheApp()
     }
 }
 
 // MARK: - StartPagePresenter
-extension StartPagePresenterImpl: StartPagePresenter {
+extension StartPagePresenterImpl: StartPagePresenterProtocol {
     
-    private func startTimer() {
-        self.data.isShowStartElements = false
-        self.view?.setLoadingVisible(true)
-        
-        self.view?.show(data: self.data)
-        let randomTime = Int.random(in: 2...5)
-        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(randomTime)) {
-                self.view?.setLoadingVisible(false)
-                
-                if UserDefaults.isFirstLaunch() {
-                    self.data.isShowStartElements = true
-                    self.view?.show(data: self.data)
-                    return
+    private func enterTheApp() {
+        guard isFirstLaunch else {
+                self.view?.showElements()
+                DispatchQueue.main.asyncAfter(deadline: .now() + appEnterInterval) {
+                    self.onStartButtonClicked()
                 }
-                self.router?.showBooksList()
+            return
+        }
+        self.view?.showLoader()
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(loadingInterval)) {
+            self.view?.hideLoader()
+            self.view?.showElements(inFirstLaunch: true)
         }
     }
-    
+
     func onStartButtonClicked() {
         self.router?.showBooksList()
     }
-
 }

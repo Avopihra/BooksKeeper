@@ -8,7 +8,7 @@
 import UIKit
 
 // MARK: - BookPageView
-protocol BookPageViewControllerProtocol: BaseViewControllerProtocol {
+protocol BookPageViewProtocol: BaseViewProtocol {
     
 // MARK: - Show
     func show(data: BookPageData)
@@ -16,7 +16,7 @@ protocol BookPageViewControllerProtocol: BaseViewControllerProtocol {
 
 class BookPageViewController: BaseViewController {
     
-    private var presenter: BookPagePresenter?
+    private var presenter: BookPagePresenterProtocol?
     var configurator: BookPageConfigurator?
     
     private var initialExperationDate: Date?
@@ -137,14 +137,14 @@ extension BookPageViewController: UITextFieldDelegate {
 // MARK: - Setup
 extension BookPageViewController {
 
-    func setup(presenter: BookPagePresenter?,
+    func setup(presenter: BookPagePresenterProtocol?,
                configurator: BookPageConfigurator?) {
         self.presenter = presenter
         self.configurator = configurator
     }
 }
 
-extension BookPageViewController: BookPageViewControllerProtocol {
+extension BookPageViewController: BookPageViewProtocol {
     
     func show(data: BookPageData) {
         self.configureBookDatePicker(data.book?.experationDate)

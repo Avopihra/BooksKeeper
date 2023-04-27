@@ -15,7 +15,7 @@ protocol StartPageConfigurator: BaseConfigurator {
 // MARK: - StartPageConfiguratorImpl
 class StartPageConfiguratorImpl: BaseConfiguratorImpl {
 
-    private weak var presenter: StartPagePresenter?
+    private weak var presenter: StartPagePresenterProtocol?
 
 // MARK: - Outlets
     @IBOutlet private weak var viewController: StartPageViewController!
@@ -26,7 +26,7 @@ class StartPageConfiguratorImpl: BaseConfiguratorImpl {
 
         let presenter = StartPagePresenterImpl(view: self.viewController, router: router)
         self.presenter = presenter
-
+        
         self.viewController.setup(presenter: self.presenter, configurator: self)
     }
 }

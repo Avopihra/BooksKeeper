@@ -19,7 +19,7 @@ private enum BooksListSection: Int {
 }
 
 // MARK: - BooksListView
-protocol BooksListViewControllerProtocol: BaseViewControllerProtocol {
+protocol BooksListViewProtocol: BaseViewProtocol {
     
 // MARK: - Show
     func show(data: BooksListData)
@@ -29,7 +29,7 @@ protocol BooksListViewControllerProtocol: BaseViewControllerProtocol {
 class BooksListViewController: BaseTableViewController {
     
 // MARK: - VIPER
-    var presenter: BooksListPresenter?
+    var presenter: BooksListPresenterProtocol?
     var configurator: BooksListConfigurator?
     
 // MARK: - Outlets
@@ -58,39 +58,47 @@ class BooksListViewController: BaseTableViewController {
         self.bookListItem.title = NSLocalizedString("Books list", comment: "")
         
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(onAddButtonClicked))
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "shapeIcon"), style: .done, target: self, action: #selector(onSortingButtonClicked))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: leftBarButtonItem())
         
         let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = UIColor(named: "backgroundGray")
-        appearance.titleTextAttributes = [.foregroundColor: UIColor.black]
-        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.black]
-
-        self.navigationController?.navigationBar.tintColor = UIColor(named: "blueButton")
+        appearance.backgroundColor = UIColor(named: "backgroundBlue")
+        appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
+        appearance.largeTitleTextAttributes = [.foregroundColor: UIColor.white]
+        self.navigationController?.navigationBar.tintColor = UIColor.white
         self.navigationController?.navigationBar.standardAppearance = appearance
         self.navigationController?.navigationBar.compactAppearance = appearance
         self.navigationController?.navigationBar.scrollEdgeAppearance = appearance
     }
     
-    @objc func onAddButtonClicked(sender: UIBarButtonItem) {
+    @objc func onAddButtonClicked() {
         self.presenter?.onAddButtonClicked()
     }
     
-    @objc func onSortingButtonClicked(sender: UIBarButtonItem) {
+    @objc func onSortingButtonClicked() {
         self.presenter?.onSortingButtonClicked()
+    }
+    
+    private func leftBarButtonItem() -> UIButton {
+        let image = UIImage(systemName: "arrow.up.arrow.down")
+        let button = UIButton(type: .system)
+        button.setImage(image, for: .normal)
+        button.tintColor = .white
+        button.addTarget(self, action: #selector(onSortingButtonClicked), for: .touchUpInside)
+        return button
     }
 }
 
 // MARK: - Setup
 extension BooksListViewController {
 
-    func setup(presenter: BooksListPresenter?,
+    func setup(presenter: BooksListPresenterProtocol?,
                configurator: BooksListConfigurator?) {
         self.presenter = presenter
         self.configurator = configurator
     }
 }
 
-extension BooksListViewController: BooksListViewControllerProtocol {
+extension BooksListViewController: BooksListViewProtocol {
 
     func show(data: BooksListData) {
         self.modelSections.removeAll()

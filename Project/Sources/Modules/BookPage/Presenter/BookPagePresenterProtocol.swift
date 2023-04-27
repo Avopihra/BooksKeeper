@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - BookPagePresenter
-protocol BookPagePresenter: BasePresenter {
+protocol BookPagePresenterProtocol: BasePresenterProtocol {
     
     func setCompletionValue(isEditMode: Bool,
                             book: Book?,
@@ -21,7 +21,7 @@ protocol BookPagePresenter: BasePresenter {
 // MARK: - BookPagePresenterImpl
 class BookPagePresenterImpl: BasePresenterImpl {
 
-    private weak var view: BookPageViewControllerProtocol?
+    private weak var view: BookPageViewProtocol?
     private var router: BookPageRouter?
     private var valueCompletion: ((Book) -> Void)?
 
@@ -29,7 +29,7 @@ class BookPagePresenterImpl: BasePresenterImpl {
     private var data = BookPageData()
     
 // MARK: - Init
-    required init(view: BookPageViewControllerProtocol,
+    required init(view: BookPageViewProtocol,
                   router: BookPageRouter) {
         self.view = view
         self.router = router
@@ -43,7 +43,7 @@ class BookPagePresenterImpl: BasePresenterImpl {
 }
 
 // MARK: - BookPagePresenter
-extension BookPagePresenterImpl: BookPagePresenter {
+extension BookPagePresenterImpl: BookPagePresenterProtocol {
     
     func setCompletionValue(isEditMode: Bool,
                             book: Book?,

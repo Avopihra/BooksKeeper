@@ -18,7 +18,7 @@ protocol BookPageConfigurator: BaseConfigurator {
 // MARK: - BookPageConfiguratorImpl
 class BookPageConfiguratorImpl: BaseConfiguratorImpl {
 
-    private weak var presenter: BookPagePresenter?
+    private weak var presenter: BookPagePresenterProtocol?
 
 // MARK: - Outlets
     @IBOutlet private weak var viewController: BookPageViewController!

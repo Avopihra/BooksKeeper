@@ -3,11 +3,14 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		CE2059C329F8367900DC7703 /* Common.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2059C229F8367900DC7703 /* Common.swift */; };
+		CE2059C629F90B9700DC7703 /* StartPageProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE2059C529F90B9700DC7703 /* StartPageProtocols.swift */; };
+		CE2059C929F90E6F00DC7703 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = CE2059C829F90E6F00DC7703 /* Lottie */; };
+		CE2059CB29F9126100DC7703 /* loader.json in Resources */ = {isa = PBXBuildFile; fileRef = CE2059CA29F9126100DC7703 /* loader.json */; };
 		CE22CE2A276CAAAC00C0870F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22CE29276CAAAC00C0870F /* AppDelegate.swift */; };
 		CE22CE2E276CAAAC00C0870F /* BookPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22CE2D276CAAAC00C0870F /* BookPageViewController.swift */; };
 		CE22CE31276CAAAC00C0870F /* BooksListViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE22CE2F276CAAAC00C0870F /* BooksListViewController.storyboard */; };
@@ -19,7 +22,7 @@
 		CE22CE62276CCFE500C0870F /* ModelSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22CE61276CCFE500C0870F /* ModelSection.swift */; };
 		CE22CE64276CD0BE00C0870F /* ModelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22CE63276CD0BE00C0870F /* ModelRow.swift */; };
 		CE22CE6A276CD6B700C0870F /* BooksListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22CE69276CD6B700C0870F /* BooksListData.swift */; };
-		CE22CE6C276CD6C600C0870F /* BooksListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22CE6B276CD6C600C0870F /* BooksListPresenter.swift */; };
+		CE22CE6C276CD6C600C0870F /* BooksListPresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE22CE6B276CD6C600C0870F /* BooksListPresenterProtocol.swift */; };
 		CEB34188276F240B00CAFBD8 /* GetBooksListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB34187276F240B00CAFBD8 /* GetBooksListInteractor.swift */; };
 		CEB3418B276F264B00CAFBD8 /* SaveBooksListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3418A276F264B00CAFBD8 /* SaveBooksListInteractor.swift */; };
 		CEB3418D276F2F7700CAFBD8 /* BooksListInteractors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEB3418C276F2F7700CAFBD8 /* BooksListInteractors.swift */; };
@@ -30,7 +33,7 @@
 		CECB7160276D6EBF005A6954 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB715F276D6EBF005A6954 /* BaseTableViewController.swift */; };
 		CECB7162276D6ECF005A6954 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB7161276D6ECF005A6954 /* BaseViewController.swift */; };
 		CECB7164276D6EDD005A6954 /* BaseRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB7163276D6EDD005A6954 /* BaseRouter.swift */; };
-		CECB7166276D6EEA005A6954 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB7165276D6EEA005A6954 /* BasePresenter.swift */; };
+		CECB7166276D6EEA005A6954 /* BasePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB7165276D6EEA005A6954 /* BasePresenterProtocol.swift */; };
 		CECB7168276D6EF9005A6954 /* BaseConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB7167276D6EF9005A6954 /* BaseConfigurator.swift */; };
 		CECB716A276D7034005A6954 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB7169276D7034005A6954 /* Book.swift */; };
 		CECB716C276D8F4A005A6954 /* StartPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CECB716B276D8F4A005A6954 /* StartPageViewController.swift */; };
@@ -46,7 +49,7 @@
 		CEDC0415276ECF7D0093F18E /* BooksListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC0414276ECF7D0093F18E /* BooksListConfigurator.swift */; };
 		CEDC0417276ED0E70093F18E /* BooksListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC0416276ED0E70093F18E /* BooksListRouter.swift */; };
 		CEDC0419276EDA9B0093F18E /* BookPageConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC0418276EDA9B0093F18E /* BookPageConfigurator.swift */; };
-		CEDC041B276EDACC0093F18E /* BookPagePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC041A276EDACC0093F18E /* BookPagePresenter.swift */; };
+		CEDC041B276EDACC0093F18E /* BookPagePresenterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC041A276EDACC0093F18E /* BookPagePresenterProtocol.swift */; };
 		CEDC041D276EDAE00093F18E /* BookPageRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC041C276EDAE00093F18E /* BookPageRouter.swift */; };
 		CEDC041F276EDB850093F18E /* BookPageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEDC041E276EDB850093F18E /* BookPageData.swift */; };
 		CEDC0421276EDCEC0093F18E /* BookPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEDC0420276EDCEC0093F18E /* BookPageViewController.storyboard */; };
@@ -61,6 +64,8 @@
 
 /* Begin PBXFileReference section */
 		CE2059C229F8367900DC7703 /* Common.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Common.swift; sourceTree = "<group>"; };
+		CE2059C529F90B9700DC7703 /* StartPageProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageProtocols.swift; sourceTree = "<group>"; };
+		CE2059CA29F9126100DC7703 /* loader.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loader.json; sourceTree = "<group>"; };
 		CE22CE26276CAAAC00C0870F /* BooksKeeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BooksKeeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE22CE29276CAAAC00C0870F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE22CE2D276CAAAC00C0870F /* BookPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPageViewController.swift; sourceTree = "<group>"; };
@@ -74,7 +79,7 @@
 		CE22CE61276CCFE500C0870F /* ModelSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSection.swift; sourceTree = "<group>"; };
 		CE22CE63276CD0BE00C0870F /* ModelRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelRow.swift; sourceTree = "<group>"; };
 		CE22CE69276CD6B700C0870F /* BooksListData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListData.swift; sourceTree = "<group>"; };
-		CE22CE6B276CD6C600C0870F /* BooksListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListPresenter.swift; sourceTree = "<group>"; };
+		CE22CE6B276CD6C600C0870F /* BooksListPresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListPresenterProtocol.swift; sourceTree = "<group>"; };
 		CEB34187276F240B00CAFBD8 /* GetBooksListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBooksListInteractor.swift; sourceTree = "<group>"; };
 		CEB3418A276F264B00CAFBD8 /* SaveBooksListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveBooksListInteractor.swift; sourceTree = "<group>"; };
 		CEB3418C276F2F7700CAFBD8 /* BooksListInteractors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListInteractors.swift; sourceTree = "<group>"; };
@@ -85,7 +90,7 @@
 		CECB715F276D6EBF005A6954 /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		CECB7161276D6ECF005A6954 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CECB7163276D6EDD005A6954 /* BaseRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseRouter.swift; sourceTree = "<group>"; };
-		CECB7165276D6EEA005A6954 /* BasePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		CECB7165276D6EEA005A6954 /* BasePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePresenterProtocol.swift; sourceTree = "<group>"; };
 		CECB7167276D6EF9005A6954 /* BaseConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseConfigurator.swift; sourceTree = "<group>"; };
 		CECB7169276D7034005A6954 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		CECB716B276D8F4A005A6954 /* StartPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartPageViewController.swift; sourceTree = "<group>"; };
@@ -101,7 +106,7 @@
 		CEDC0414276ECF7D0093F18E /* BooksListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListConfigurator.swift; sourceTree = "<group>"; };
 		CEDC0416276ED0E70093F18E /* BooksListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksListRouter.swift; sourceTree = "<group>"; };
 		CEDC0418276EDA9B0093F18E /* BookPageConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPageConfigurator.swift; sourceTree = "<group>"; };
-		CEDC041A276EDACC0093F18E /* BookPagePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPagePresenter.swift; sourceTree = "<group>"; };
+		CEDC041A276EDACC0093F18E /* BookPagePresenterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPagePresenterProtocol.swift; sourceTree = "<group>"; };
 		CEDC041C276EDAE00093F18E /* BookPageRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPageRouter.swift; sourceTree = "<group>"; };
 		CEDC041E276EDB850093F18E /* BookPageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookPageData.swift; sourceTree = "<group>"; };
 		CEDC0420276EDCEC0093F18E /* BookPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BookPageViewController.storyboard; sourceTree = "<group>"; };
@@ -121,12 +126,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE2059C929F90E6F00DC7703 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CE2059C429F90B5E00DC7703 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CE2059C529F90B9700DC7703 /* StartPageProtocols.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		CE22CE1D276CAAAC00C0870F = {
 			isa = PBXGroup;
 			children = (
@@ -205,6 +219,7 @@
 		CE22CE43276CAE4700C0870F /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				CE2059CA29F9126100DC7703 /* loader.json */,
 				CEE094E22770A5F0001C5711 /* Fonts */,
 				CE22CE46276CAFE200C0870F /* Strings */,
 				CE22CE47276CAFEF00C0870F /* Assets */,
@@ -279,7 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				CECB7167276D6EF9005A6954 /* BaseConfigurator.swift */,
-				CECB7165276D6EEA005A6954 /* BasePresenter.swift */,
+				CECB7165276D6EEA005A6954 /* BasePresenterProtocol.swift */,
 				CECB7163276D6EDD005A6954 /* BaseRouter.swift */,
 				CECB7161276D6ECF005A6954 /* BaseViewController.swift */,
 				CECB715F276D6EBF005A6954 /* BaseTableViewController.swift */,
@@ -299,7 +314,7 @@
 		CE22CE4F276CB18800C0870F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				CEDC041A276EDACC0093F18E /* BookPagePresenter.swift */,
+				CEDC041A276EDACC0093F18E /* BookPagePresenterProtocol.swift */,
 				CEDC041E276EDB850093F18E /* BookPageData.swift */,
 			);
 			path = Presenter;
@@ -335,7 +350,7 @@
 		CE22CE53276CB1B400C0870F /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
-				CE22CE6B276CD6C600C0870F /* BooksListPresenter.swift */,
+				CE22CE6B276CD6C600C0870F /* BooksListPresenterProtocol.swift */,
 				CE22CE69276CD6B700C0870F /* BooksListData.swift */,
 				CEB3418C276F2F7700CAFBD8 /* BooksListInteractors.swift */,
 			);
@@ -361,6 +376,7 @@
 		CE22CE57276CB3C600C0870F /* StartPage */ = {
 			isa = PBXGroup;
 			children = (
+				CE2059C429F90B5E00DC7703 /* Protocols */,
 				CE22CE5B276CB41300C0870F /* Configurator */,
 				CE22CE5A276CB41100C0870F /* Router */,
 				CE22CE59276CB40F00C0870F /* Presenter */,
@@ -489,6 +505,9 @@
 			dependencies = (
 			);
 			name = BooksKeeper;
+			packageProductDependencies = (
+				CE2059C829F90E6F00DC7703 /* Lottie */,
+			);
 			productName = BooksKeeper;
 			productReference = CE22CE26276CAAAC00C0870F /* BooksKeeper.app */;
 			productType = "com.apple.product-type.application";
@@ -517,6 +536,9 @@
 				ru,
 			);
 			mainGroup = CE22CE1D276CAAAC00C0870F;
+			packageReferences = (
+				CE2059C729F90E6F00DC7703 /* XCRemoteSwiftPackageReference "lottie-ios" */,
+			);
 			productRefGroup = CE22CE27276CAAAC00C0870F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -541,6 +563,7 @@
 				CEE094EC2770CA21001C5711 /* STIXGeneral-Regular.otf in Resources */,
 				CEE094E82770A628001C5711 /* SF-Pro-Display-Bold.otf in Resources */,
 				CEDFA99A277229CF00147B58 /* Localizable.strings in Resources */,
+				CE2059CB29F9126100DC7703 /* loader.json in Resources */,
 				CECB716E276D8FF1005A6954 /* StartPageViewController.storyboard in Resources */,
 				CE22CE33276CAABD00C0870F /* PageIcons.xcassets in Resources */,
 				CE22CE31276CAAAC00C0870F /* BooksListViewController.storyboard in Resources */,
@@ -558,7 +581,7 @@
 				CEDC0419276EDA9B0093F18E /* BookPageConfigurator.swift in Sources */,
 				CEDC041F276EDB850093F18E /* BookPageData.swift in Sources */,
 				CECB716A276D7034005A6954 /* Book.swift in Sources */,
-				CECB7166276D6EEA005A6954 /* BasePresenter.swift in Sources */,
+				CECB7166276D6EEA005A6954 /* BasePresenterProtocol.swift in Sources */,
 				CE22CE64276CD0BE00C0870F /* ModelRow.swift in Sources */,
 				CEDC040A276DC59D0093F18E /* StartPageRouter.swift in Sources */,
 				CE22CE2E276CAAAC00C0870F /* BookPageViewController.swift in Sources */,
@@ -566,14 +589,15 @@
 				CEDC0411276E001E0093F18E /* UserDefaults+Extension.swift in Sources */,
 				CEB3418D276F2F7700CAFBD8 /* BooksListInteractors.swift in Sources */,
 				CE22CE2A276CAAAC00C0870F /* AppDelegate.swift in Sources */,
-				CEDC041B276EDACC0093F18E /* BookPagePresenter.swift in Sources */,
+				CEDC041B276EDACC0093F18E /* BookPagePresenterProtocol.swift in Sources */,
 				CE22CE6A276CD6B700C0870F /* BooksListData.swift in Sources */,
 				CEDC0404276DBCCB0093F18E /* StartPagePresenter.swift in Sources */,
 				CECB7162276D6ECF005A6954 /* BaseViewController.swift in Sources */,
 				CEB34198276F3C8700CAFBD8 /* BookModelRow.swift in Sources */,
 				CEE094EE27715F2B001C5711 /* AnimationSpinner.swift in Sources */,
 				CEE094DE27702777001C5711 /* Date+Extension.swift in Sources */,
-				CE22CE6C276CD6C600C0870F /* BooksListPresenter.swift in Sources */,
+				CE2059C629F90B9700DC7703 /* StartPageProtocols.swift in Sources */,
+				CE22CE6C276CD6C600C0870F /* BooksListPresenterProtocol.swift in Sources */,
 				CEDC040E276DF1560093F18E /* UIViewController+Extension.swift in Sources */,
 				CECB716C276D8F4A005A6954 /* StartPageViewController.swift in Sources */,
 				CECB7164276D6EDD005A6954 /* BaseRouter.swift in Sources */,
@@ -810,6 +834,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CE2059C729F90E6F00DC7703 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = upToNextMinorVersion;
+				minimumVersion = 4.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CE2059C829F90E6F00DC7703 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CE2059C729F90E6F00DC7703 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CE22CE1E276CAAAC00C0870F /* Project object */;
 }
