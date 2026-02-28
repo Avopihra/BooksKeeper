@@ -2,7 +2,7 @@
 //  Book.swift
 //  BooksKeeper
 //
-//  Created by Viktoriya on 18.12.2021.
+//  Created by Viktoriya Gagarina on 18.12.2021.
 //
 
 import Foundation
@@ -22,6 +22,7 @@ struct Book: Codable {
               let name = name,
               let experationDate = experationDate else { return nil }
         
+        // MARK: id
         self.id = id
         self.experationDate = experationDate
         self.name = name
