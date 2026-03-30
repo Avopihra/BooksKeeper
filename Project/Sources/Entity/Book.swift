@@ -38,6 +38,7 @@ struct Book: Codable {
         self.experationDate = experationDate
     }
     
+    // MARK: - Public Properties
     var isExpired: Bool {
         let timeInSeconds = Date().timeIntervalSince(self.experationDate)
         if timeInSeconds > (60*60*24) {
