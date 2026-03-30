@@ -2,7 +2,7 @@
 //  Book.swift
 //  BooksKeeper
 //
-//  Created by Viktoriya on 18.12.2021.
+//  Created by Viktoriya on 18.12.2021
 //
 
 import Foundation
