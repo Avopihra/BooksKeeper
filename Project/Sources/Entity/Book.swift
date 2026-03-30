@@ -7,6 +7,8 @@
 
 import Foundation
 
+// MARK: Book
+
 struct Book: Codable {
     
     private(set) var id: String!
